@@ -11,7 +11,8 @@ ppa:webupd8team/sublime-text-3 \
 ppa:alessandro-strada/ppa \
 ppa:philip.scott/elementary-tweaks \
 ppa:pinta-maintainers/pinta-stable \
-ppa:nilarimogard/webupd8
+ppa:nilarimogard/webupd8 \
+ppa:linrunner/tlp
 
 # Uninstall Packages
 sudo apt-get remove --auto-remove \
@@ -44,7 +45,9 @@ albert \
 curl \
 vim \
 git \
-zsh
+zsh \
+tlp \
+tlp-rdw
 
 # Post Installation Action
 apt-cache search jdk
