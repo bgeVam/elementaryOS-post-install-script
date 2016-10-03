@@ -10,9 +10,14 @@ ppa:qos/pulseaudio-dlna \
 ppa:webupd8team/sublime-text-3 \
 ppa:alessandro-strada/ppa \
 ppa:philip.scott/elementary-tweaks \
+ppa:pinta-maintainers/pinta-stable
 
 # Update Repositories
 sudo apt-get update
+
+# Upgrade System
+sudo apt-get upgrade
+sudo apt-get upgrade-dist
 
 # Install Packages
 sudo apt-get install -f \
@@ -24,7 +29,8 @@ chromium-codecs-ffmpeg-extra \
 sublime-text-installer \
 google-drive-ocamlfuse \
 solaar-gnome3 \
-elementary-tweaks
+elementary-tweaks \
+pinta
 
 # Post Installation Action
 apt-cache search jdk
