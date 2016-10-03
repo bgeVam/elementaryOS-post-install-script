@@ -12,6 +12,14 @@ ppa:alessandro-strada/ppa \
 ppa:philip.scott/elementary-tweaks \
 ppa:pinta-maintainers/pinta-stable
 
+# Uninstall Packages
+sudo apt-get remove --auto-remove \
+epiphany-browser \
+scratch-text-editor
+
+# Autoclean
+sudo apt-get autoclean
+
 # Update Repositories
 sudo apt-get update
 
