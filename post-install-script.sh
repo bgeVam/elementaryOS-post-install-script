@@ -37,5 +37,5 @@ apt-cache search jdk
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export PATH=$PATH:/usr/lib/jvm/java-8-openjdk/bin
 google-drive-ocamlfuse
-sudo mkdir -p "/home/georg/Google Drive"
-google-drive-ocamlfuse "/home/georg/Google Drive"
+sudo mkdir -p "$HOME/Google Drive"
+google-drive-ocamlfuse "$HOME/Google Drive"
