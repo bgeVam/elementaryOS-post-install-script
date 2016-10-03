@@ -40,7 +40,11 @@ google-drive-ocamlfuse \
 solaar-gnome3 \
 elementary-tweaks \
 pinta \
-albert
+albert \
+curl \
+vim \
+git \
+zsh
 
 # Post Installation Action
 apt-cache search jdk
@@ -49,6 +53,8 @@ export PATH=$PATH:/usr/lib/jvm/java-8-openjdk/bin
 google-drive-ocamlfuse
 sudo mkdir -p "$HOME/Google Drive"
 google-drive-ocamlfuse "$HOME/Google Drive"
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | bash
+sudo chsh -s $(which zsh) $(whoami)
 
 # Set default applications
 # TODO sed -i -e 's/midori\.desktop/chromium-browser\.desktop/g' ~/.config/mimeapps.list
