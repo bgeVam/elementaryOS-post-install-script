@@ -48,7 +48,9 @@ git \
 zsh \
 tlp \
 tlp-rdw \
-pulseaudio-dlna
+pulseaudio-dlna \
+redshift \
+redshift-gtk
 
 # Install non-package software
 sudo mkdir -p /opt/franz
@@ -74,10 +76,15 @@ sudo mkdir -p "$HOME/Google Drive"
 google-drive-ocamlfuse "$HOME/Google Drive"
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | bash
 sudo chsh -s $(which zsh) $(whoami)
+gtk-redshift -l geoclue -t 6500:5000 -b 1.0:0.6
 
 # Set default applications
 # TODO sed -i -e 's/midori\.desktop/chromium-browser\.desktop/g' ~/.config/mimeapps.list
-#TODO Add Sublime
+# TODO Add Sublime
+
+# Set startup applications
+# TODO pulseaudio-dlna
+# TODO redshift
 
 #Reboot
 read -p "Press [ENTER] to reboot..."
