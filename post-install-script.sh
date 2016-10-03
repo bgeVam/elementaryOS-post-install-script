@@ -47,7 +47,8 @@ vim \
 git \
 zsh \
 tlp \
-tlp-rdw
+tlp-rdw \
+pulseaudio-dlna
 
 # Install non-package software
 sudo mkdir -p /opt/franz
