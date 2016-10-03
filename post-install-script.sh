@@ -10,7 +10,8 @@ ppa:qos/pulseaudio-dlna \
 ppa:webupd8team/sublime-text-3 \
 ppa:alessandro-strada/ppa \
 ppa:philip.scott/elementary-tweaks \
-ppa:pinta-maintainers/pinta-stable
+ppa:pinta-maintainers/pinta-stable \
+ppa:nilarimogard/webupd8
 
 # Uninstall Packages
 sudo apt-get remove --auto-remove \
@@ -38,7 +39,8 @@ sublime-text-installer \
 google-drive-ocamlfuse \
 solaar-gnome3 \
 elementary-tweaks \
-pinta
+pinta \
+albert
 
 # Post Installation Action
 apt-cache search jdk
@@ -47,6 +49,10 @@ export PATH=$PATH:/usr/lib/jvm/java-8-openjdk/bin
 google-drive-ocamlfuse
 sudo mkdir -p "$HOME/Google Drive"
 google-drive-ocamlfuse "$HOME/Google Drive"
+
+# Set default applications
+# TODO sed -i -e 's/midori\.desktop/chromium-browser\.desktop/g' ~/.config/mimeapps.list
+#TODO Add Sublime
 
 #Reboot
 read -p "Press [ENTER] to reboot..."
