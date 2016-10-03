@@ -49,6 +49,21 @@ zsh \
 tlp \
 tlp-rdw
 
+# Install non-package software
+sudo mkdir -p /opt/franz
+wget -qO- https://github.com/meetfranz/franz-app/releases/download/4.0.4/Franz-linux-x64-4.0.4.tgz | sudo tar xvz -C /opt/franz/
+sudo wget "https://cdn-images-1.medium.com/max/360/1*v86tTomtFZIdqzMNpvwIZw.png" -O /opt/franz/franz-icon.png
+sudo bash -c "cat <<EOF > /usr/share/applications/franz.desktop                                                                 
+[Desktop Entry]
+Name=Franz
+Comment=
+Exec=/opt/franz/Franz
+Icon=/opt/franz/franz-icon.png
+Terminal=false
+Type=Application
+Categories=Messaging,Internet
+EOF"
+
 # Post Installation Action
 apt-cache search jdk
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
