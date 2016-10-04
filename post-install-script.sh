@@ -5,19 +5,18 @@ read -p "Press [ENTER] to set up elementary OS..."
 sudo apt-get install software-properties-common
 
 # Add Repositories
-sudo apt-add-repository \
-ppa:qos/pulseaudio-dlna \
-ppa:webupd8team/sublime-text-3 \
-ppa:alessandro-strada/ppa \
-ppa:philip.scott/elementary-tweaks \
-ppa:pinta-maintainers/pinta-stable \
-ppa:nilarimogard/webupd8 \
-ppa:linrunner/tlp \
-ppa:libreoffice/libreoffice-5-0
+sudo apt-add-repository -y ppa:qos/pulseaudio-dlna
+sudo apt-add-repository -y ppa:webupd8team/sublime-text-3
+sudo apt-add-repository -y ppa:alessandro-strada/ppa
+sudo apt-add-repository -y ppa:philip.scott/elementary-tweaks
+sudo apt-add-repository -y ppa:pinta-maintainers/pinta-stable
+sudo apt-add-repository -y ppa:nilarimogard/webupd8
+sudo apt-add-repository -y ppa:linrunner/tlp
+sudo apt-add-repository -y ppa:libreoffice/libreoffice-5-0
 
 # Uninstall Packages
 sudo apt-get remove --auto-remove \
-epiphany-browser \
+#epiphany-browser \
 scratch-text-editor
 
 # Autoclean
@@ -76,8 +75,8 @@ export PATH=$PATH:/usr/lib/jvm/java-8-openjdk/bin
 google-drive-ocamlfuse
 sudo mkdir -p "$HOME/Google Drive"
 google-drive-ocamlfuse "$HOME/Google Drive"
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | bash
-sudo chsh -s $(which zsh) $(whoami)
+#curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | bash
+#sudo chsh -s $(which zsh) $(whoami)
 gtk-redshift -l geoclue -t 6500:5000 -b 1.0:0.6
 
 # Set default applications
