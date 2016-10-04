@@ -12,7 +12,8 @@ ppa:alessandro-strada/ppa \
 ppa:philip.scott/elementary-tweaks \
 ppa:pinta-maintainers/pinta-stable \
 ppa:nilarimogard/webupd8 \
-ppa:linrunner/tlp
+ppa:linrunner/tlp \
+ppa:libreoffice/libreoffice-5-0
 
 # Uninstall Packages
 sudo apt-get remove --auto-remove \
@@ -27,7 +28,7 @@ sudo apt-get update
 
 # Upgrade System
 sudo apt-get upgrade
-sudo apt-get upgrade-dist
+sudo apt-get dist-upgrade
 
 # Install Packages
 sudo apt-get install -f \
@@ -50,7 +51,8 @@ tlp \
 tlp-rdw \
 pulseaudio-dlna \
 redshift \
-redshift-gtk
+redshift-gtk \
+libreoffice
 
 # Install non-package software
 sudo mkdir -p /opt/franz
