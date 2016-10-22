@@ -30,28 +30,27 @@ sudo apt-get upgrade
 sudo apt-get dist-upgrade
 
 # Install Packages
-sudo apt-get install -f \
-pulseaudio-dlna \
-openjdk-8-jdk \
-chromium-browser \
-chromium-codecs-ffmpeg \
-chromium-codecs-ffmpeg-extra \
-sublime-text-installer \
-google-drive-ocamlfuse \
-solaar-gnome3 \
-elementary-tweaks \
-pinta \
-albert \
-curl \
-vim \
-git \
-zsh \
-tlp \
-tlp-rdw \
-pulseaudio-dlna \
-redshift \
-redshift-gtk \
-libreoffice
+sudo apt-get install -y pulseaudio-dlna
+sudo apt-get install -y openjdk-8-jdk
+sudo apt-get install -y chromium-browser
+sudo apt-get install -y chromium-codecs-ffmpeg
+sudo apt-get install -y chromium-codecs-ffmpeg-extra
+sudo apt-get install -y sublime-text-installer
+sudo apt-get install -y google-drive-ocamlfuse
+sudo apt-get install -y solaar-gnome3
+sudo apt-get install -y elementary-tweaks
+sudo apt-get install -y pinta
+sudo apt-get install -y albert
+sudo apt-get install -y curl
+sudo apt-get install -y vim
+sudo apt-get install -y git
+# sudo apt-get install -y zsh \
+sudo apt-get install -y tlp
+sudo apt-get install -y tlp-rdw
+sudo apt-get install -y pulseaudio-dlna
+sudo apt-get install -y redshift
+sudo apt-get install -y redshift-gtk
+sudo apt-get install -y libreoffice
 
 # Install non-package software
 sudo mkdir -p /opt/franz
@@ -73,8 +72,8 @@ apt-cache search jdk
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export PATH=$PATH:/usr/lib/jvm/java-8-openjdk/bin
 google-drive-ocamlfuse
-sudo mkdir -p "$HOME/Google Drive"
-google-drive-ocamlfuse "$HOME/Google Drive"
+sudo mkdir -p "$HOME/Google_Drive"
+google-drive-ocamlfuse "$HOME/Google_Drive"
 #curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | bash
 #sudo chsh -s $(which zsh) $(whoami)
 gtk-redshift -l geoclue -t 6500:5000 -b 1.0:0.6
