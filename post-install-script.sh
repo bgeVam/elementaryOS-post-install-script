@@ -67,6 +67,28 @@ Type=Application
 Categories=Messaging,Internet
 EOF"
 
+sudo bash -c "cat <<EOF > /usr/share/applications/google_drive.desktop                                                                 
+[Desktop Entry]
+Name=Google Drive
+Comment=
+Exec=xdg-open /home/georg/Google_Drive
+Icon=/home/georg/google-drive.png
+Terminal=false
+Type=Application
+Categories=
+EOF"
+
+sudo bash -c "cat <<EOF > /usr/share/applications/tu_wien.desktop                                                                 
+[Desktop Entry]
+Name=TU Informatik
+Comment=
+Exec=xdg-open /home/georg/Google_Drive/TU\ Informatik
+Icon=/home/georg/tu_logo.png
+Terminal=false
+Type=Application
+Categories=
+EOF"
+
 # Post Installation Action
 apt-cache search jdk
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
