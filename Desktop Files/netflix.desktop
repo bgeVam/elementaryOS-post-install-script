@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Name=Netflix
+# Only KDE 4 seems to use GenericName, so we reuse the KDE strings.
+# From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
+GenericName=Web Browser
+Comment=Watch Netflix
+Exec=/usr/bin/google-chrome-stable %U netflix.com -kiosk 
+Terminal=false
+Icon=/home/georg/netflix.png
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+X-Ayatana-Desktop-Shortcuts=NewWindow;NewIncognito
+

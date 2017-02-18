@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Name=Sync Android Music
+# Only KDE 4 seems to use GenericName, so we reuse the KDE strings.
+# From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
+GenericName=Sync Music
+Comment=Sync music from home folder to android smartphone
+Exec=gnome-terminal -e "bash -c 'rsync -r --progress  --ignore-existing /home/georg/Music/ /media/georg/0BB9-9F5E/Music/;$SHELL'"
+Terminal=false
+Icon=/home/georg/android-sync-music.png
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+X-Ayatana-Desktop-Shortcuts=NewWindow;NewIncognito
+

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=mv ~/.config/pulse ~/.config/pulse.old
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Reset Sound
+Name=Reset Sound
+Comment[en_US]=
+Comment=

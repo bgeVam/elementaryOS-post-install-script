@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=bash /opt/google/google-drive-autostart.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Google Drive
+Name=Google Drive
+Comment[en_US]=connect to google drive
+Comment=connect to google drive

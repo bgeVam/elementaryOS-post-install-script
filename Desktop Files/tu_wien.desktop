@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=TU Informatik
+Comment=
+Exec=xdg-open /home/georg/Google_Drive/TU\ Informatik
+Icon=/home/georg/tu_logo.png
+Terminal=false
+Type=Application
+Categories=

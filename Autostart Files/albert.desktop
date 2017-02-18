@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=albert
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Albert
+Name=Albert
+Comment[en_US]=autostart albert
+Comment=autostart albert
