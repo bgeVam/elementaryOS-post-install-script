@@ -108,6 +108,10 @@ gtk-redshift -l geoclue -t 6500:5000 -b 1.0:0.6
 # TODO pulseaudio-dlna
 # TODO redshift
 
+# Fix USB Hot Plug Issue:
+
+echo "on" | sudo tee /sys/bus/usb/devices/usb*/power/control
+
 #Reboot
 read -p "Press [ENTER] to reboot..."
 read -p "Sure?"
