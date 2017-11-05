@@ -11,7 +11,6 @@ sudo apt-add-repository -y ppa:alessandro-strada/ppa
 sudo apt-add-repository -y ppa:philip.scott/elementary-tweaks
 sudo apt-add-repository -y ppa:pinta-maintainers/pinta-stable
 sudo apt-add-repository -y ppa:nilarimogard/webupd8
-sudo apt-add-repository -y ppa:linrunner/tlp
 sudo apt-add-repository -y ppa:libreoffice/libreoffice-5-0
 
 # Uninstall Packages
@@ -45,8 +44,6 @@ sudo apt-get install -y curl
 sudo apt-get install -y vim
 sudo apt-get install -y git
 # sudo apt-get install -y zsh \
-sudo apt-get install -y tlp
-sudo apt-get install -y tlp-rdw
 sudo apt-get install -y pulseaudio-dlna
 sudo apt-get install -y redshift
 sudo apt-get install -y redshift-gtk
@@ -111,6 +108,11 @@ gtk-redshift -l geoclue -t 6500:5000 -b 1.0:0.6
 # Fix USB Hot Plug Issue:
 
 echo "on" | sudo tee /sys/bus/usb/devices/usb*/power/control
+
+check powertop settings:
+echo 'on' > '/sys/bus/usb/devices/1-7/power/control';
+echo 'on' > '/sys/bus/usb/devices/1-9/power/control';
+
 
 #Reboot
 read -p "Press [ENTER] to reboot..."
