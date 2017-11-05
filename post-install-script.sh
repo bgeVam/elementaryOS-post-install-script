@@ -107,12 +107,14 @@ gtk-redshift -l geoclue -t 6500:5000 -b 1.0:0.6
 
 # Fix USB Hot Plug Issue:
 
-echo "on" | sudo tee /sys/bus/usb/devices/usb*/power/control
+#echo "on" | sudo tee /sys/bus/usb/devices/usb*/power/control
 
-check powertop settings:
-echo 'on' > '/sys/bus/usb/devices/1-7/power/control';
-echo 'on' > '/sys/bus/usb/devices/1-9/power/control';
+#check powertop settings:
+#echo 'on' > '/sys/bus/usb/devices/1-7/power/control';
+#echo 'on' > '/sys/bus/usb/devices/1-9/power/control';
 
+#In /etc/bluetooth/main.conf
+#set AutoEnable=true
 
 #Reboot
 read -p "Press [ENTER] to reboot..."
