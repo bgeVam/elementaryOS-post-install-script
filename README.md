@@ -11,11 +11,14 @@ rsync -rvl --size-only --info=progress2  ~/Music/ myphone:/data/data/com.arachno
 
 Install Driver for D-Link DWA-131
 
+```
 git clone https://github.com/Mange/rtl8192eu-linux-driver.git
 cd rtl8192eu-linux-driver
+make clean
 make
 sudo make install 
 sudo modprope -rv rtl8xxxu
 sudo modprobe 8192eu
 
 echo "blacklist rtl8xxxu" | sudo tee -a /etc/modprobe.d/blacklist.conf
+```
