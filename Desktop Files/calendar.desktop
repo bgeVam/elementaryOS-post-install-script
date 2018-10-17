@@ -1,15 +1,15 @@
 [Desktop Entry]
 Version=1.0
-Name=Sync Android Music
+Name=Calendar
 # Only KDE 4 seems to use GenericName, so we reuse the KDE strings.
 # From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
-GenericName=Sync Music
-Comment=Sync music from home folder to android smartphone
-Exec=gnome-terminal -e "bash -c \"rsync -rvl --size-only --info=progress2 --delete '/home/georg/Music/' 'myphone:/data/data/com.arachnoid.sshelper/home/SDCard/Music/'\";$SHELL"
+GenericName=Calendar
+Comment=See Appointments
+Exec=chromium-browser --app=https://calendar.google.com/calendar/render#main_7 
 Terminal=false
-Icon=/home/georg/android-sync-music.png
+Icon=office-calendar
 Type=Application
-Categories=Network;WebBrowser;
+Categories=Office;
 MimeType=text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
 X-Ayatana-Desktop-Shortcuts=NewWindow;NewIncognito
 

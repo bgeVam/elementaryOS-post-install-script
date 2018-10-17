@@ -1,41 +1,44 @@
 #!/bin/bash
-cd ~/Music/
-interprets=$(ls -d */)
-interprets="$(sed -r 's/\/home\/georg\/Music\///g' <<< "$interprets")"
-echo "$interprets" > interpret.temp
-sed -i -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g" interpret.temp
-interprets=$(cat interpret.temp)
+COMPUTER_MUSIC_PATH='/home/georg/Music/'
+PHONE_MUSIC_PATH='/data/data/com.arachnoid.sshelper/home/SDCard/Music/'
 
-while read -r interpret; do
-	cd ~/Music/"$interpret"
-	albums=$(ls -d */)
-	albums="$(sed -r 's/\/home\/georg\/Music\/"$interpret"\///g' <<< "$albums")"
-	echo $albums;
-	echo "############"
-	echo "$albums" > albums.temp
-	while read -r album; do
-		echo "$interpret""$album"
-		DIRECTORY="/data/data/com.arachnoid.sshelper/home/SDCard/Music/$interpret$album"
-		#DIRECTORY="abc"
-result=$((
-(
-$(sshpass -p 'admin' ssh myphone <<START
-		cd "$DIRECTORY"
-START
-)
-) 1>log
-) 2>&1)
-#))
-		if [[ "$result" = *"No such file or directory"* ]]; then
-			src="/home/georg/Music/$interpret/$album"
-			echo "$src"
-			target="myphone:"'"'"/data/data/com.arachnoid.sshelper/home/SDCard/Music/$interpret/$album"'"'
-			echo "$target"
-			bash -c "scp -r '$src' '$target'"
-		else
-		  echo "ALBUM ALREADY EXISTS SKIPPING..."
-		fi
+# List music on computer
+find $COMPUTER_MUSIC_PATH -type d -print > notebook.temp
+sed -i "s:$COMPUTER_MUSIC_PATH::g" notebook.temp 
+sort notebook.temp > notebook_sorted.temp
+rm notebook.temp
 
-	done  <<< "$albums"
+# List music on phone
+ssh myphone "find $PHONE_MUSIC_PATH -type d -print" > phone.temp
+sed -i "s:$PHONE_MUSIC_PATH::g" phone.temp 
+sort phone.temp > phone_sorted.temp
+rm phone.temp
 
-done <<< "$interprets"
+# List diff
+diff -w phone_sorted.temp notebook_sorted.temp > diff.temp
+echo ">... Exists on computer, missing on phone."
+echo "<... Exists on phone, missing on computer."
+cat diff.temp
+
+# Get missing interpret list
+cat diff.temp |  grep ">" | grep -v "/" | cut -c 3- > diff_interprets.temp
+while read interpret; do
+	echo "Create new Interpret Directory..."
+	ssh myphone "mkdir '$PHONE_MUSIC_PATH$interpret'"
+done <diff_interprets.temp
+rm diff_interprets.temp
+
+#Get missing album list
+cat diff.temp |  grep ">" | grep "/" | cut -c 3- > diff_albums.temp
+while read album; do
+	src="$COMPUTER_MUSIC_PATH$album"
+	target="myphone:"'"'"/data/data/com.arachnoid.sshelper/home/SDCard/Music/$album"'"'
+	echo "scp -r '$src' '$target'"
+	bash -c "scp -r '$src' '$target'"
+done <diff_albums.temp
+rm diff_albums.temp
+
+# Remove diff
+rm diff.temp
+
+exit 0;
