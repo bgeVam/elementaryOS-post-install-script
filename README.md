@@ -22,3 +22,9 @@ sudo modprobe 8192eu
 
 echo "blacklist rtl8xxxu" | sudo tee -a /etc/modprobe.d/blacklist.conf
 ```
+
+Rename AlbumArt
+
+find -name .cover.jpg -execdir mv '{}' AlbumArt.jpg ';'
+
+install sacad!
