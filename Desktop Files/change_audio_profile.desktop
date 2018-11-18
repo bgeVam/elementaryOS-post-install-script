@@ -1,0 +1,28 @@
+[Desktop Entry]
+Version=1.0
+Name=Change Audio Profile
+# Only KDE 4 seems to use GenericName, so we reuse the KDE strings.
+# From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
+GenericName=Change Audio Profile
+# Gnome and KDE 3 uses Comment.
+Comment=Change Audio Profile
+Exec=/usr/bin/pactl set-card-profile 0 output:analog-stereo
+StartupNotify=true
+Terminal=false
+Icon=multimedia-volume-control
+Type=Application
+Categories=Audio;AudioVideo;Mixer;
+MimeType=text/html;
+Actions=set-default-stereo;set-hdmi-stereo-extra;reset-audio
+
+[Desktop Action set-default-stereo]
+Name=Audio To Default Stereo
+Exec=/usr/bin/pactl set-card-profile 0 output:analog-stereo
+
+[Desktop Action set-hdmi-stereo-extra]
+Name=Audio To HDMI Stereo
+Exec=/usr/bin/pactl set-card-profile 0 output:hdmi-stereo-extra1
+
+[Desktop Action reset-audio]
+Name=Reset Pulseaudio
+Exec=/usr/bin/pkill -f pulseaudio
