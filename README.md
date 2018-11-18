@@ -15,6 +15,7 @@ Install Driver for D-Link DWA-131
 git clone https://github.com/Mange/rtl8192eu-linux-driver.git
 cd rtl8192eu-linux-driver
 make clean
+rm .cache.mk
 make
 sudo make install 
 sudo modprope -rv rtl8xxxu
