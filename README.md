@@ -33,4 +33,4 @@ install sacad!
 
 
 
-sudo rsync --verbose -aXv /home/georg/ /media/georg/Volume/georg --delete --exclude={/home/georg/.cache}
+sudo rsync --verbose -aXv --delete  --exclude={'/home/georg/.cache'} /home/georg/ /media/georg/Volume/georg
