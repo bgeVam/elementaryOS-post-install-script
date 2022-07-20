@@ -30,3 +30,7 @@ Rename AlbumArt
 find -name .cover.jpg -execdir mv '{}' AlbumArt.jpg ';'
 
 install sacad!
+
+
+
+sudo rsync --verbose -aXv /home/georg/ /media/georg/Volume/georg --delete --exclude={/home/georg/.cache}
